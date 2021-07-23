@@ -26,7 +26,7 @@ namespace intro05_UIDesign
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            if(Username.Text == "yangyankun" && Password.Password == "shengri12")
+            if(Username.Text == "yangyankun" && Password.Password == "12345")
             {
                 MessageBox.Show("Login in successfully.");
                 DialogResult = true;
