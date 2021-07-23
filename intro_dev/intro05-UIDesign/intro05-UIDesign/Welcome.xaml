@@ -1,0 +1,30 @@
+﻿<Window x:Class="intro05_UIDesign.Welcome"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:intro05_UIDesign"
+        mc:Ignorable="d"
+        Title="Welcome Interface" Height="650" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.4*"></RowDefinition>
+            <RowDefinition Height="2.5*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="1.75*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Image Grid.Row="1" Grid.ColumnSpan="5" Source="E:\Dropbox\Work\Revit Dev\revit-c--dev\intro_dev\intro05-UIDesign\intro05-UIDesign\Resource\simple sketch.png"></Image>
+        <TextBlock Grid.Row="2" Grid.Column="1" Text="Username: " VerticalAlignment="Bottom" HorizontalAlignment="Right"></TextBlock>
+        <TextBox x:Name="Username" Grid.Row="2" Grid.Column="2" Width="150" Height="25" VerticalAlignment="Bottom"></TextBox>
+        <TextBlock Grid.Row="3" Grid.Column="1" Text="Password: " VerticalAlignment="Center" HorizontalAlignment="Right"></TextBlock>
+        <PasswordBox x:Name="Password" Grid.Row="3" Grid.Column="2" Width="150" Height="25"></PasswordBox>
+        <Button x:Name="Enter"  Grid.Row="3" Grid.Column="3" Height="25" Click="btnLogin_Click" Margin="39,27">Enter</Button>
+    </Grid>
+</Window>
