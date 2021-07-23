@@ -1,0 +1,2 @@
+Run "hello revit!" in revit.
+Load the add-in with add-in manager.
