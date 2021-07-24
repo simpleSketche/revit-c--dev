@@ -1,0 +1,76 @@
+﻿using Autodesk.Revit.Attributes;
+using Autodesk.Revit.DB;
+using Autodesk.Revit.DB.Architecture;
+using Autodesk.Revit.UI;
+using NPOI.HSSF.UserModel;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace intro07_selectFeatures
+{
+    [Transaction(TransactionMode.ReadOnly)]
+    public class selectFeatures : IExternalCommand
+    {
+        public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
+        {
+            var doc = commandData.Application.ActiveUIDocument.Document;
+            var collector = new FilteredElementCollector(doc).OfClass(typeof(SpatialElement)).ToElements();
+            var roomDataInfo = new List<List<string>>();
+            foreach (Room item in collector)
+            {
+                var name = item.Name;
+                var area = item.Area;
+                var level = item.Level.Name;
+                var param = item.get_Parameter(BuiltInParameter.ROOM_HEIGHT);
+                var roomHeight = param.AsDouble().ToString();
+                var roomInfo = new List<string>
+                {
+                    name, area.ToString(), level, roomHeight
+                };
+                roomDataInfo.Add(roomInfo);
+            }
+
+            var workbook = new HSSFWorkbook();
+            var sheet = workbook.CreateSheet("Room Info");
+            var headers = new string[] { "Room Info", "Room Area", "Room Height", "Room Level" };
+            var row0 = sheet.CreateRow(0);
+            for (int i = 0; i < headers.Count(); i++)
+            {
+                var cell = row0.CreateCell(i);
+                cell.SetCellValue(headers[i]);
+
+            }
+            for (int j = 0; j < roomDataInfo.Count; j++)
+            {
+                var row = sheet.CreateRow(j + 1);
+                for (int z = 0; z < roomDataInfo[j].Count(); z++)
+                {
+                    var cell = row.CreateCell(z);
+                    cell.SetCellValue(roomDataInfo[j][z]);
+                }
+            }
+
+            SaveFileDialog fileDia = new SaveFileDialog();
+            fileDia.Filter = "(EXCElfile)|*.xls";
+            fileDia.FileName = "Room Info";
+            bool isFileSave = false;
+            fileDia.FileOk += (s, e) => { isFileSave = true; };
+            fileDia.ShowDialog();
+            if (isFileSave)
+            {
+                var path = fileDia.FileName;
+                using(var fs = File.OpenWrite(path))
+                {
+                    workbook.Write(fs);
+                    MessageBox.Show($"File saved successfully to {fileDia.FileName}!");
+                }
+            }
+            return Result.Succeeded;
+        }
+    }
+}
