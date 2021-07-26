@@ -18,9 +18,23 @@ namespace intro07_selectFeatures
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
-            var doc = commandData.Application.ActiveUIDocument.Document;
+            var unidoc = commandData.Application.ActiveUIDocument;
+            var doc = unidoc.Document;
             var collector = new FilteredElementCollector(doc).OfClass(typeof(SpatialElement)).ToElements();
+            var collector2 = new FilteredElementCollector(doc);
             var roomDataInfo = new List<List<string>>();
+
+            ///extract all the wall family instances.
+            collector2.OfCategory(BuiltInCategory.OST_Walls).OfClass(typeof(FamilyInstance));
+            var wallElements = new List<Element>();
+/*            foreach(Element elm in collector2)
+            {
+                var wall = elm as FamilyInstance;
+                var geoObjs = wall();
+                wallElements.Add(elm);
+            }*/
+
+
             foreach (Room item in collector)
             {
                 var name = item.Name;
