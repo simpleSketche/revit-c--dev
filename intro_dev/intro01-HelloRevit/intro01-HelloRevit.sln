@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "intro01-HelloRevit", "intro01-HelloRevit\intro01-HelloRevit.csproj", "{37625B46-954D-4820-A553-CBBB0A67E9B1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CUD_Practice", "..\intro08-UCD\CUD_Practice\CUD_Practice.csproj", "{9566F9B5-AE4E-4BC0-B774-19D8F0BC20BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CUD_Practice 02", "..\intro08-UCD\CUD_Practice 02\CUD_Practice 02.csproj", "{AE606241-0B4B-4569-B107-520EC4BF2313}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{37625B46-954D-4820-A553-CBBB0A67E9B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37625B46-954D-4820-A553-CBBB0A67E9B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37625B46-954D-4820-A553-CBBB0A67E9B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9566F9B5-AE4E-4BC0-B774-19D8F0BC20BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9566F9B5-AE4E-4BC0-B774-19D8F0BC20BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9566F9B5-AE4E-4BC0-B774-19D8F0BC20BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9566F9B5-AE4E-4BC0-B774-19D8F0BC20BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE606241-0B4B-4569-B107-520EC4BF2313}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE606241-0B4B-4569-B107-520EC4BF2313}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE606241-0B4B-4569-B107-520EC4BF2313}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE606241-0B4B-4569-B107-520EC4BF2313}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
