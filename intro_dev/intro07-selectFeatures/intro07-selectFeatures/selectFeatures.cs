@@ -10,10 +10,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using getGeo;
 
 namespace intro07_selectFeatures
 {
-    [Transaction(TransactionMode.ReadOnly)]
+    [Transaction(TransactionMode.Manual)]
     public class selectFeatures : IExternalCommand
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
@@ -25,14 +26,18 @@ namespace intro07_selectFeatures
             var roomDataInfo = new List<List<string>>();
 
             ///extract all the wall family instances.
-            collector2.OfCategory(BuiltInCategory.OST_Walls).OfClass(typeof(FamilyInstance));
-            var wallElements = new List<Element>();
-/*            foreach(Element elm in collector2)
+            collector2.OfCategory(BuiltInCategory.OST_Walls).OfClass(typeof(FamilyInstance)).ToElements();
+            var wallElements = new List<List<GeometryObject>>();
+            MessageBox.Show("heloooooo!");
+            MessageBox.Show($"number of elements {collector2.Count()}");
+            foreach (Element elm in collector2)
             {
                 var wall = elm as FamilyInstance;
-                var geoObjs = wall();
-                wallElements.Add(elm);
-            }*/
+                var geoObjs = wall.getGeometryobjs();
+                var val = geoObjs[0];
+                MessageBox.Show($"Wall data {val}");
+                wallElements.Add(geoObjs);
+            }
 
 
             foreach (Room item in collector)
@@ -49,7 +54,9 @@ namespace intro07_selectFeatures
                 roomDataInfo.Add(roomInfo);
             }
 
-            var workbook = new HSSFWorkbook();
+
+
+/*            var workbook = new HSSFWorkbook();
             var sheet = workbook.CreateSheet("Room Info");
             var headers = new string[] { "Room Info", "Room Area", "Room Height", "Room Level" };
             var row0 = sheet.CreateRow(0);
@@ -83,7 +90,7 @@ namespace intro07_selectFeatures
                     workbook.Write(fs);
                     MessageBox.Show($"File saved successfully to {fileDia.FileName}!");
                 }
-            }
+            }*/
             return Result.Succeeded;
         }
     }
