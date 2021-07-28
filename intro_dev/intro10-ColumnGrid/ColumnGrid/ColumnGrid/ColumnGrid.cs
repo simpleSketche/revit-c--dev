@@ -16,6 +16,13 @@ namespace ColumnGrid
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
+            // Get the user input values (number of columns, distance between columns)
+            UserControl1 userinput = new UserControl1();
+            userinput.ShowDialog();
+            var inputNumCol = Convert.ToInt32(userinput.userInput.Text);
+            var inputSpan = float.Parse(userinput.userInput2.Text);
+
+            // initialize the current active revit window, start
             var doc = commandData.Application.ActiveUIDocument.Document;
             var transaction = new Transaction(doc, "grid");
             var collector = new FilteredElementCollector(doc);
@@ -28,6 +35,7 @@ namespace ColumnGrid
 
             Guid schemaGuid = new Guid("3B4C586C-CC3A-47A7-8333-3E02547F95F2");
 
+
             transaction.Start();
 
 
@@ -38,10 +46,10 @@ namespace ColumnGrid
 
             // Establish the grid first
             // initialize the h and v span distance
-            float hSpan = 25f;
-            float vSpan = 25f;
-            int hCount = 15;
-            int vCount = 15;
+            float hSpan = inputSpan;
+            float vSpan = inputSpan;
+            int hCount = inputNumCol;
+            int vCount = inputNumCol;
 
 
             var crvs = new CurveLoop();

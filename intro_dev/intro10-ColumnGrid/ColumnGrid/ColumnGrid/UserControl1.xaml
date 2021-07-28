@@ -1,0 +1,34 @@
+﻿<Window x:Class="ColumnGrid.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ColumnGrid"
+             mc:Ignorable="d" 
+             Title="User Input Interface" Height="200" Width="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Text="Number of Column to build: " VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <TextBox Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2" x:Name="userInput" Margin="10,10,10,10"></TextBox>
+        <Button Grid.Row="3" Grid.Column="6" Margin="10" Click="BtnEnter_Click" Grid.ColumnSpan="2" Background="#ff9900">Enter
+        </Button>
+        <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Text="Input the desired column span" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <TextBox Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="2" x:Name="userInput2" Margin="10,10,10,10"></TextBox>
+    </Grid>
+</Window>
