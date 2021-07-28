@@ -24,11 +24,13 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Text="Number of Column to build: " VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        <TextBox Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2" x:Name="userInput" Margin="10,10,10,10"></TextBox>
+        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" Text="x-axis: Number of Column to build: " VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <TextBox Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="2" x:Name="userInput" Margin="10,10,10,10"></TextBox>
+        <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Text="y-axis: Number of column to build: " VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <TextBox Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="2" x:Name="userInput2" Margin="10,10,10,10"></TextBox>
         <Button Grid.Row="3" Grid.Column="6" Margin="10" Click="BtnEnter_Click" Grid.ColumnSpan="2" Background="#ff9900">Enter
         </Button>
-        <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Text="Input the desired column span" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        <TextBox Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="2" x:Name="userInput2" Margin="10,10,10,10"></TextBox>
+        <TextBlock Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Text="Input the desired column span" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <TextBox Grid.Row="2" Grid.Column="5" Grid.ColumnSpan="2" x:Name="userInput3" Margin="10,10,10,10"></TextBox>
     </Grid>
 </Window>

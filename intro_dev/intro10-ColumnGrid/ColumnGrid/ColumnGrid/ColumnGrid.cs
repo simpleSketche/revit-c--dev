@@ -19,8 +19,9 @@ namespace ColumnGrid
             // Get the user input values (number of columns, distance between columns)
             UserControl1 userinput = new UserControl1();
             userinput.ShowDialog();
-            var inputNumCol = Convert.ToInt32(userinput.userInput.Text);
-            var inputSpan = float.Parse(userinput.userInput2.Text);
+            var inputNumCol1 = Convert.ToInt32(userinput.userInput.Text);
+            var inputNumCol2 = Convert.ToInt32(userinput.userInput2.Text);
+            var inputSpan = float.Parse(userinput.userInput3.Text);
 
             // initialize the current active revit window, start
             var doc = commandData.Application.ActiveUIDocument.Document;
@@ -48,8 +49,8 @@ namespace ColumnGrid
             // initialize the h and v span distance
             float hSpan = inputSpan;
             float vSpan = inputSpan;
-            int hCount = inputNumCol;
-            int vCount = inputNumCol;
+            int hCount = inputNumCol1;
+            int vCount = inputNumCol2;
 
 
             var crvs = new CurveLoop();

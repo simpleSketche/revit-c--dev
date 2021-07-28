@@ -28,8 +28,10 @@ namespace ColumnGrid
         private void BtnEnter_Click(object sender, RoutedEventArgs e)
         {
             var inputvalue = Convert.ToInt32(userInput.Text);
-            var inputvalue2 = float.Parse(userInput2.Text);
-            if (userInput.Text != null && inputvalue>0 && userInput2.Text!=null && inputvalue2 > 0)
+            var inputvalue2 = Convert.ToInt32(userInput2.Text);
+            var inputvalue3 = float.Parse(userInput3.Text);
+            if (userInput.Text != null && inputvalue > 0 && userInput2.Text != null && inputvalue2 > 0
+                && userInput3.Text != null && inputvalue3 > 0)
             {
                 DialogResult = true;
             }
