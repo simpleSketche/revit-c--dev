@@ -1,0 +1,38 @@
+
+
+
+canvas{
+    background: #fce3a9;
+}
+span{
+    padding-top: 1.5em;
+    margin-bottom: 1.5em;
+    background-color: white;
+}
+p.label{
+    padding-top:45%;
+    padding-left:20%;
+    padding-right: 20%;
+    color: #00133d;
+    font-size: 25px;
+    font-weight: bold;
+    border-color: #00133d;
+}
+
+p.output_title{
+    padding-top:12%;
+    color:#00133d;
+    padding-right: 5%;
+    font-size:20px;
+}
+
+p.output{
+    padding-top:5.5%;
+    color:red;
+    font-size:20px;
+}
+
+a{
+    font-size: 60px;
+    color:#00133d;
+}
